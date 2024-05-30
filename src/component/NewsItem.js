@@ -5,11 +5,10 @@ function NewsItem({ item, index }) {
     to: `/${index}`,
     style: { textDecoration: "none", color: "inherit" },
     state: item,
-    key: index,
   });
 
   return (
-    <div style={{ display: "flex", border: "1px solid black" }}>
+    <div style={{ display: "flex", border: "1px solid black" }} key={index}>
       <Link {...getLinkProps(index)}>
         <img
           src={item.urlToImage}
