@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import NewsList from "./component/NewsList";
 import { Route, Routes } from "react-router-dom";
+import NewsDetail from "./component/NewsDetail";
 
 function App() {
   const [content, setContent] = useState([]);
@@ -17,6 +18,7 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<NewsList news={content} />} />
+      <Route path="/:id" element={<NewsDetail news={content} />} />
     </Routes>
   );
 }

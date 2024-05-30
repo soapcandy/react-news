@@ -1,28 +1,24 @@
-function NewsList({ news }) {
-  const handleClick = (url) => {
-    window.location.href = url;
-  };
+import { Link } from "react-router-dom";
 
+function NewsList({ news }) {
   return (
     <div>
       {news.map((item, index) => (
-        <div
-          style={{ display: "flex", border: "1px solid black" }}
-          key={index}
-          onClick={() => handleClick(item.url)}
-        >
-          <img
-            src={item.urlToImage}
-            style={{ width: "100px", height: "100%" }}
-            alt=""
-          />
+        <Link to={`/${index}`} style={{ textDecoration: "none" }} key={index}>
+          <div style={{ display: "flex", border: "1px solid black" }}>
+            <img
+              src={item.urlToImage}
+              style={{ width: "10rem", height: "10rem" }}
+              alt=""
+            />
 
-          <div>
-            <h3>{item.title}</h3>
-            <div>{item.description}</div>
-            <div>{item.author}</div>
+            <div>
+              <h3>{item.title}</h3>
+              <div>{item.description}</div>
+              <div>{item.author}</div>
+            </div>
           </div>
-        </div>
+        </Link>
       ))}
     </div>
   );
