@@ -1,28 +1,10 @@
-import { Link } from "react-router-dom";
+import NewsItem from "./NewsItem";
 
-function NewsList({ news }) {
+function NewsList({ news, num }) {
   return (
     <div>
       {news.map((item, index) => (
-        <Link
-          to={`/${index}`}
-          style={{ textDecoration: "none", color: "inherit" }}
-          key={index}
-        >
-          <div style={{ display: "flex", border: "1px solid black" }}>
-            <img
-              src={item.urlToImage}
-              style={{ width: "10rem", height: "10rem" }}
-              alt=""
-            />
-
-            <div>
-              <h3>{item.title}</h3>
-              <div>{item.description}</div>
-              <div>{item.author}</div>
-            </div>
-          </div>
-        </Link>
+        <NewsItem item={item} key={index} index={index} />
       ))}
     </div>
   );

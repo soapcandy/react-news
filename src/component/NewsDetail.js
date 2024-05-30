@@ -7,6 +7,7 @@ function NewsDetail({ news }) {
 
   useEffect(() => {
     const newsDetail = news.find((_item, index) => index.toString() === id);
+    // const newsDetail = news[id];
     setDetail(newsDetail);
   }, [id, news]);
 
