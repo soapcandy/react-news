@@ -1,33 +1,23 @@
-import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 
-function NewsDetail({ news }) {
-  const { id } = useParams();
-  const [detail, setDetail] = useState();
+function NewsDetail() {
+  const location = useLocation();
+  const item = location.state;
+  console.log(item);
 
-  useEffect(() => {
-    const newsDetail = news.find((_item, index) => index.toString() === id);
-    // const newsDetail = news[id];
-    setDetail(newsDetail);
-  }, [id, news]);
-
-  if (detail) {
-    return (
-      <div>
-        <h2>{detail.title}</h2>
-        <img
-          src={detail.urlToImage}
-          style={{ width: "10rem", height: "10rem" }}
-          alt=""
-        />
-        <div>{detail.content}</div>
-        <div>{detail.author}</div>
-        <div>{detail.publishedAt}</div>
-      </div>
-    );
-  } else {
-    <div>로딩중...</div>;
-  }
+  return (
+    <div>
+      <h2>{item.title}</h2>
+      <img
+        src={item.urlToImage}
+        style={{ width: "10rem", height: "10rem" }}
+        alt=""
+      />
+      <div>{item.content}</div>
+      <div>{item.author}</div>
+      <div>{item.publishedAt}</div>
+    </div>
+  );
 }
 
 export default NewsDetail;

@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
 
-function NewsItem({ item, index, indexNum }) {
+function NewsItem({ item, index }) {
   const getLinkProps = (index) => ({
     to: `/${index}`,
     style: { textDecoration: "none", color: "inherit" },
+    state: item,
     key: index,
   });
 

@@ -1,6 +1,6 @@
 import NewsItem from "./NewsItem";
 
-function NewsList({ news, num }) {
+function NewsList({ news }) {
   return (
     <div>
       {news.map((item, index) => (

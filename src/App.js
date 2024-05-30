@@ -18,7 +18,7 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<NewsList news={content} />} />
-      <Route path="/:id" element={<NewsDetail news={content} />} />
+      <Route path="/:id" element={<NewsDetail />} />
     </Routes>
   );
 }
