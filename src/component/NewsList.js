@@ -1,8 +1,16 @@
 function NewsList({ news }) {
+  const handleClick = (url) => {
+    window.location.href = url;
+  };
+
   return (
     <div>
       {news.map((item, index) => (
-        <div style={{ display: "flex", border: "1px solid black" }} key={index}>
+        <div
+          style={{ display: "flex", border: "1px solid black" }}
+          key={index}
+          onClick={() => handleClick(item.url)}
+        >
           <img
             src={item.urlToImage}
             style={{ width: "100px", height: "100%" }}
