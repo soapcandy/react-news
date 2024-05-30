@@ -1,20 +1,21 @@
 function NewsList({ news }) {
-  console.log(news);
-
   return (
     <div>
-      <div style={{ display: "flex" }}>
-        <img
-          src={news.urlToImage}
-          style={{ width: "100px", height: "100px" }}
-        />
+      {news.map((item, index) => (
+        <div style={{ display: "flex", border: "1px solid black" }} key={index}>
+          <img
+            src={item.urlToImage}
+            style={{ width: "100px", height: "100%" }}
+            alt=""
+          />
 
-        <div>
-          <h3>{news.title}</h3>
-          <div>{news.description}</div>
-          <div>{news.author}</div>
+          <div>
+            <h3>{item.title}</h3>
+            <div>{item.description}</div>
+            <div>{item.author}</div>
+          </div>
         </div>
-      </div>
+      ))}
     </div>
   );
 }
