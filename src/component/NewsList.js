@@ -4,7 +4,11 @@ function NewsList({ news }) {
   return (
     <div>
       {news.map((item, index) => (
-        <Link to={`/${index}`} style={{ textDecoration: "none" }} key={index}>
+        <Link
+          to={`/${index}`}
+          style={{ textDecoration: "none", color: "inherit" }}
+          key={index}
+        >
           <div style={{ display: "flex", border: "1px solid black" }}>
             <img
               src={item.urlToImage}

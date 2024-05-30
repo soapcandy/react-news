@@ -25,7 +25,7 @@ function NewsDetail({ news }) {
       </div>
     );
   } else {
-    <div>test</div>;
+    <div>로딩중...</div>;
   }
 }
 
