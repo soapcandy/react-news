@@ -1,25 +1,19 @@
-import { Link } from "react-router-dom";
+import NewsLink from "./NewsLink";
 
 function NewsItem({ item, index }) {
-  const getLinkProps = (index) => ({
-    to: `/${index}`,
-    style: { textDecoration: "none", color: "inherit" },
-    state: item,
-  });
-
   return (
     <div style={{ display: "flex", border: "1px solid black" }} key={index}>
-      <Link {...getLinkProps(index)}>
+      <NewsLink to={`/${index}`} state={item}>
         <img
           src={item.urlToImage}
           style={{ width: "10rem", height: "10rem" }}
           alt=""
         />
-      </Link>
+      </NewsLink>
       <div>
-        <Link {...getLinkProps(index)}>
+        <NewsLink to={`/${index}`} state={item}>
           <h3>{item.title}</h3>
-        </Link>
+        </NewsLink>
         <div>{item.description}</div>
         <div>{item.author}</div>
       </div>
